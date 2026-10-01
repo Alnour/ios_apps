@@ -32,6 +32,18 @@ works on a real iPhone, and the same SpeechAnalyzer code was verified natively o
 `-ask` runs the assistant and prints its linked answer. `-tab customers|followUps|assistant` picks the
 starting tab and `-open-seeded` opens the sample customer's page (handy for screenshots).
 
+## Run on an iPhone
+
+```sh
+make run-device                 # first available iPhone (USB or paired wireless)
+DEVICE="iPhone" make run-device # by name or UDID
+```
+
+One-time on the phone: Settings › Privacy & Security › Developer Mode → on (restarts), unlock,
+plug into the Mac and tap Trust. Apple Intelligence must be on (Settings › Apple Intelligence &
+Siri) for extraction, overviews, drafts and the assistant. Signing is automatic with the
+`DEVELOPMENT_TEAM` in `project.yml` (paid developer account, so no 7-day expiry).
+
 The Xcode project is generated from `project.yml` (xcodegen); Info.plist keys live there.
 
 ## Layout
