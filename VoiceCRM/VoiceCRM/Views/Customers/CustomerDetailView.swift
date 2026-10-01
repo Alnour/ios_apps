@@ -118,21 +118,29 @@ struct CustomerDetailView: View {
     }
 
     private var factsSection: some View {
-        Section("Facts") {
+        Section {
             if customer.facts.isEmpty {
-                Text("Nothing known yet.").foregroundStyle(.secondary)
+                Text("Nothing known yet. Record a note, or add a fact from the ⋯ menu.").foregroundStyle(.secondary)
             }
             ForEach(FactCategory.allCases) { cat in
                 let items = customer.facts.filter { $0.category == cat }.sorted { $0.createdAt > $1.createdAt }
                 if !items.isEmpty {
-                    DisclosureGroup {
-                        ForEach(items) { f in FactRow(fact: f, customer: customer) }
-                            .onDelete { idx in for i in idx { context.delete(items[i]) }; try? context.save() }
-                    } label: {
-                        Label("\(cat.label) (\(items.count))", systemImage: cat.symbol)
-                    }
+                    Label(cat.label, systemImage: cat.symbol)
+                        .font(.caption.weight(.semibold)).foregroundStyle(.secondary)
+                        .textCase(.uppercase)
+                        .listRowSeparator(.hidden)
+                    ForEach(items) { f in FactRow(fact: f, customer: customer) }
+                        .onDelete { idx in for i in idx { context.delete(items[i]) }; try? context.save() }
                 }
             }
+        } header: {
+            HStack {
+                Text("Facts (\(customer.facts.count))")
+                Spacer()
+                Button("Add", systemImage: "plus") { addingFact = true }.font(.caption).labelStyle(.titleAndIcon)
+            }
+        } footer: {
+            if !customer.facts.isEmpty { Text("Tap a fact to edit it, swipe to delete. Facts come from your notes and feed the overview, drafts and the assistant.") }
         }
     }
 
