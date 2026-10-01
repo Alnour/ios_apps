@@ -1,0 +1,104 @@
+# Apple docs corpus for the local Context Hub source "apple".
+# Format: an id line (apple/<id>), then indented key lines:
+#   description: one line        tags: comma,separated
+#   intro: <file in tools/apple-docs/>   (optional, hand-written "how we use this")
+#   sdk: <Framework>             (optional; append public decls from its iOS .swiftinterface)
+#   page: <path under https://developer.apple.com/documentation/>   (repeatable)
+
+apple/foundation-models
+  description: Apple Intelligence on-device LLM (FoundationModels, iOS 26): LanguageModelSession, @Generable/@Guide guided generation, tools, availability, 4096-token context budget
+  tags: apple,ios,swift,foundationmodels,apple-intelligence,llm,generable,on-device
+  intro: foundation-models.intro.md
+  sdk: FoundationModels
+  page: foundationmodels
+  page: foundationmodels/generating-content-and-performing-tasks-with-foundation-models
+  page: foundationmodels/improving-the-safety-of-generative-model-output
+  page: foundationmodels/languagemodelsession
+  page: foundationmodels/systemlanguagemodel
+  page: foundationmodels/systemlanguagemodel/availability-swift.enum
+  page: foundationmodels/generable
+  page: foundationmodels/guide(description:)
+  page: foundationmodels/generationguide
+  page: foundationmodels/tool
+  page: foundationmodels/generationoptions
+  page: foundationmodels/transcript
+  page: foundationmodels/languagemodelsession/generationerror
+  page: foundationmodels/instructions
+  page: foundationmodels/prompt
+  page: technotes/tn3193-managing-the-on-device-foundation-model-s-context-window
+
+apple/speech-analyzer
+  description: On-device speech-to-text with SpeechAnalyzer + SpeechTranscriber (Speech framework, iOS 26): asset install, file and live transcription, results stream
+  tags: apple,ios,swift,speech,transcription,speechanalyzer,on-device
+  intro: speech-analyzer.intro.md
+  sdk: Speech
+  page: speech/speechanalyzer
+  page: speech/speechtranscriber
+  page: speech/assetinventory
+  page: speech/analyzerinput
+  page: speech/analyzerinputconverter
+  page: speech/speechmodule
+  page: speech/speechtranscriber/result
+
+apple/swiftdata
+  description: SwiftData persistence: @Model, relationships, ModelContext, @Query, #Predicate
+  tags: apple,ios,swift,swiftdata,persistence,model,query,predicate
+  intro: swiftdata.intro.md
+  page: swiftdata
+  page: swiftdata/model()
+  page: swiftdata/relationship(_:deleteRule:minimummodelcount:maximummodelcount:originalname:inverse:hashmodifier:)
+  page: swiftdata/modelcontext
+  page: swiftdata/query
+  page: foundation/predicate
+  page: swiftdata/preserving-your-apps-model-data-across-launches
+
+apple/contacts
+  description: Contacts framework: CNContactPickerViewController (no permission needed), CNContact, labeled values, phone numbers
+  tags: apple,ios,swift,contacts,contactsui,cncontact
+  intro: contacts.intro.md
+  page: contactsui/cncontactpickerviewcontroller
+  page: contacts/cncontact
+  page: contacts/cnlabeledvalue
+  page: contacts/cnphonenumber
+
+apple/eventkit
+  description: EventKit + EventKitUI: EKEventEditViewController (out-of-process, no permission), EKEvent, EKEventStore
+  tags: apple,ios,swift,eventkit,calendar,ekevent
+  intro: eventkit.intro.md
+  page: eventkitui/ekeventeditviewcontroller
+  page: eventkit/ekevent
+  page: eventkit/ekeventstore
+  page: eventkit/accessing-calendar-using-eventkit-and-eventkitui
+
+apple/messageui
+  description: MessageUI compose sheets: MFMailComposeViewController and MFMessageComposeViewController, with URL fallbacks
+  tags: apple,ios,swift,messageui,mail,sms,imessage
+  intro: messageui.intro.md
+  page: messageui/mfmailcomposeviewcontroller
+  page: messageui/mfmessagecomposeviewcontroller
+
+apple/avfoundation-audio
+  description: AVFAudio recording and playback: AVAudioRecorder, AVAudioSession, AVAudioPlayer, AVAudioEngine
+  tags: apple,ios,swift,avfoundation,avfaudio,audio,recording
+  intro: avfoundation-audio.intro.md
+  page: avfaudio/avaudiorecorder
+  page: avfaudio/avaudiosession
+  page: avfaudio/avaudioplayer
+  page: avfaudio/avaudioengine
+
+apple/swiftui-bridges
+  description: SwiftUI pieces used for UIKit bridging and app structure: UIViewControllerRepresentable, @Observable, NavigationStack, searchable, TabView
+  tags: apple,ios,swift,swiftui,uikit,representable,observable,navigation
+  intro: swiftui-bridges.intro.md
+  page: swiftui/uiviewcontrollerrepresentable
+  page: observation/observable()
+  page: swiftui/navigationstack
+  page: swiftui/view/searchable(text:placement:prompt:)
+  page: swiftui/tabview
+
+apple/naturallanguage
+  description: NaturalLanguage NLContextualEmbedding for on-device semantic similarity, and NSDataDetector for dates in text
+  tags: apple,ios,swift,naturallanguage,embedding,nsdatadetector,dates
+  intro: naturallanguage.intro.md
+  page: naturallanguage/nlcontextualembedding
+  page: foundation/nsdatadetector

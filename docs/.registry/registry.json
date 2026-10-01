@@ -1,0 +1,296 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-10-01T18:38:11.075Z",
+  "docs": [
+    {
+      "id": "apple/avfoundation-audio",
+      "name": "avfoundation-audio",
+      "description": "AVFAudio recording and playback: AVAudioRecorder, AVAudioSession, AVAudioPlayer, AVAudioEngine",
+      "source": "community",
+      "tags": [
+        "apple",
+        "ios",
+        "swift",
+        "avfoundation",
+        "avfaudio",
+        "audio",
+        "recording"
+      ],
+      "languages": [
+        {
+          "language": "swift",
+          "versions": [
+            {
+              "version": "ios-26.5",
+              "path": "apple/docs/avfoundation-audio/swift",
+              "files": [
+                "DOC.md"
+              ],
+              "size": 52830,
+              "lastUpdated": "2026-10-01"
+            }
+          ],
+          "recommendedVersion": "ios-26.5"
+        }
+      ]
+    },
+    {
+      "id": "apple/contacts",
+      "name": "contacts",
+      "description": "Contacts framework: CNContactPickerViewController (no permission needed), CNContact, labeled values, phone numbers",
+      "source": "community",
+      "tags": [
+        "apple",
+        "ios",
+        "swift",
+        "contacts",
+        "contactsui",
+        "cncontact"
+      ],
+      "languages": [
+        {
+          "language": "swift",
+          "versions": [
+            {
+              "version": "ios-26.5",
+              "path": "apple/docs/contacts/swift",
+              "files": [
+                "DOC.md"
+              ],
+              "size": 62097,
+              "lastUpdated": "2026-10-01"
+            }
+          ],
+          "recommendedVersion": "ios-26.5"
+        }
+      ]
+    },
+    {
+      "id": "apple/eventkit",
+      "name": "eventkit",
+      "description": "EventKit + EventKitUI: EKEventEditViewController (out-of-process, no permission), EKEvent, EKEventStore",
+      "source": "community",
+      "tags": [
+        "apple",
+        "ios",
+        "swift",
+        "eventkit",
+        "calendar",
+        "ekevent"
+      ],
+      "languages": [
+        {
+          "language": "swift",
+          "versions": [
+            {
+              "version": "ios-26.5",
+              "path": "apple/docs/eventkit/swift",
+              "files": [
+                "DOC.md"
+              ],
+              "size": 38033,
+              "lastUpdated": "2026-10-01"
+            }
+          ],
+          "recommendedVersion": "ios-26.5"
+        }
+      ]
+    },
+    {
+      "id": "apple/foundation-models",
+      "name": "foundation-models",
+      "description": "Apple Intelligence on-device LLM (FoundationModels, iOS 26): LanguageModelSession, @Generable/@Guide guided generation, tools, availability, 4096-token context budget",
+      "source": "community",
+      "tags": [
+        "apple",
+        "ios",
+        "swift",
+        "foundationmodels",
+        "apple-intelligence",
+        "llm",
+        "generable",
+        "on-device"
+      ],
+      "languages": [
+        {
+          "language": "swift",
+          "versions": [
+            {
+              "version": "ios-26.5",
+              "path": "apple/docs/foundation-models/swift",
+              "files": [
+                "DOC.md"
+              ],
+              "size": 156779,
+              "lastUpdated": "2026-10-01"
+            }
+          ],
+          "recommendedVersion": "ios-26.5"
+        }
+      ]
+    },
+    {
+      "id": "apple/messageui",
+      "name": "messageui",
+      "description": "MessageUI compose sheets: MFMailComposeViewController and MFMessageComposeViewController, with URL fallbacks",
+      "source": "community",
+      "tags": [
+        "apple",
+        "ios",
+        "swift",
+        "messageui",
+        "mail",
+        "sms",
+        "imessage"
+      ],
+      "languages": [
+        {
+          "language": "swift",
+          "versions": [
+            {
+              "version": "ios-26.5",
+              "path": "apple/docs/messageui/swift",
+              "files": [
+                "DOC.md"
+              ],
+              "size": 24833,
+              "lastUpdated": "2026-10-01"
+            }
+          ],
+          "recommendedVersion": "ios-26.5"
+        }
+      ]
+    },
+    {
+      "id": "apple/naturallanguage",
+      "name": "naturallanguage",
+      "description": "NaturalLanguage NLContextualEmbedding for on-device semantic similarity, and NSDataDetector for dates in text",
+      "source": "community",
+      "tags": [
+        "apple",
+        "ios",
+        "swift",
+        "naturallanguage",
+        "embedding",
+        "nsdatadetector",
+        "dates"
+      ],
+      "languages": [
+        {
+          "language": "swift",
+          "versions": [
+            {
+              "version": "ios-26.5",
+              "path": "apple/docs/naturallanguage/swift",
+              "files": [
+                "DOC.md"
+              ],
+              "size": 14702,
+              "lastUpdated": "2026-10-01"
+            }
+          ],
+          "recommendedVersion": "ios-26.5"
+        }
+      ]
+    },
+    {
+      "id": "apple/speech-analyzer",
+      "name": "speech-analyzer",
+      "description": "On-device speech-to-text with SpeechAnalyzer + SpeechTranscriber (Speech framework, iOS 26): asset install, file and live transcription, results stream",
+      "source": "community",
+      "tags": [
+        "apple",
+        "ios",
+        "swift",
+        "speech",
+        "transcription",
+        "speechanalyzer",
+        "on-device"
+      ],
+      "languages": [
+        {
+          "language": "swift",
+          "versions": [
+            {
+              "version": "ios-26.5",
+              "path": "apple/docs/speech-analyzer/swift",
+              "files": [
+                "DOC.md"
+              ],
+              "size": 62019,
+              "lastUpdated": "2026-10-01"
+            }
+          ],
+          "recommendedVersion": "ios-26.5"
+        }
+      ]
+    },
+    {
+      "id": "apple/swiftdata",
+      "name": "swiftdata",
+      "description": "SwiftData persistence: @Model, relationships, ModelContext, @Query, #Predicate",
+      "source": "community",
+      "tags": [
+        "apple",
+        "ios",
+        "swift",
+        "swiftdata",
+        "persistence",
+        "model",
+        "query",
+        "predicate"
+      ],
+      "languages": [
+        {
+          "language": "swift",
+          "versions": [
+            {
+              "version": "ios-26.5",
+              "path": "apple/docs/swiftdata/swift",
+              "files": [
+                "DOC.md"
+              ],
+              "size": 52840,
+              "lastUpdated": "2026-10-01"
+            }
+          ],
+          "recommendedVersion": "ios-26.5"
+        }
+      ]
+    },
+    {
+      "id": "apple/swiftui-bridges",
+      "name": "swiftui-bridges",
+      "description": "SwiftUI pieces used for UIKit bridging and app structure: UIViewControllerRepresentable, @Observable, NavigationStack, searchable, TabView",
+      "source": "community",
+      "tags": [
+        "apple",
+        "ios",
+        "swift",
+        "swiftui",
+        "uikit",
+        "representable",
+        "observable",
+        "navigation"
+      ],
+      "languages": [
+        {
+          "language": "swift",
+          "versions": [
+            {
+              "version": "ios-26.5",
+              "path": "apple/docs/swiftui-bridges/swift",
+              "files": [
+                "DOC.md"
+              ],
+              "size": 21713,
+              "lastUpdated": "2026-10-01"
+            }
+          ],
+          "recommendedVersion": "ios-26.5"
+        }
+      ]
+    }
+  ],
+  "skills": []
+}

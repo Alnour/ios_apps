@@ -1,0 +1,70 @@
+name: __NAME__
+options:
+  bundleIdPrefix: __PREFIX__
+  deploymentTarget:
+    iOS: "26.0"
+  xcodeVersion: "26.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    IPHONEOS_DEPLOYMENT_TARGET: "26.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ""
+    ENABLE_USER_SCRIPT_SANDBOXING: true
+    SWIFT_EMIT_LOC_STRINGS: true
+targets:
+  __NAME__:
+    type: application
+    platform: iOS
+    sources:
+      - path: __NAME__
+        excludes:
+          - "**/.DS_Store"
+    info:
+      path: __NAME__/Info.plist
+      properties:
+        CFBundleDisplayName: __NAME__
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        ITSAppUsesNonExemptEncryption: false
+        # --- usage strings & URL schemes go here, e.g.
+        # NSMicrophoneUsageDescription: "Records voice notes."
+        # LSApplicationQueriesSchemes: [whatsapp]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: __PREFIX__.__NAME__
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: true
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+  __NAME__Tests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: __NAME__Tests
+    dependencies:
+      - target: __NAME__
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: __PREFIX__.__NAME__Tests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/__NAME__.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/__NAME__"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        GENERATE_INFOPLIST_FILE: true
+schemes:
+  __NAME__:
+    build:
+      targets:
+        __NAME__: all
+        __NAME__Tests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - __NAME__Tests
