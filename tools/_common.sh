@@ -25,14 +25,11 @@ resolve_app() {
 
 need() { command -v "$1" >/dev/null 2>&1 || die "missing tool: $1 ($2)"; }
 
-# regenerate the .xcodeproj when the spec is newer (or the project is missing)
+# always regenerate the .xcodeproj: xcodegen is fast and new source files are only picked up this way
 ensure_project() {
   need xcodegen "brew install xcodegen"
-  local proj="$APP_DIR/$APP_NAME.xcodeproj"
-  if [[ ! -d "$proj" || "$APP_DIR/project.yml" -nt "$proj/project.pbxproj" ]]; then
-    log "xcodegen generate ($APP_NAME)"
-    (cd "$APP_DIR" && xcodegen generate --quiet)
-  fi
+  log "xcodegen generate ($APP_NAME)"
+  (cd "$APP_DIR" && xcodegen generate --quiet)
 }
 
 derived_data() { echo "$APP_DIR/DerivedData"; }
@@ -61,6 +58,6 @@ for devs in json.load(sys.stdin)["devices"].values():
 
 # filter xcodebuild output down to what matters; preserve exit status via PIPESTATUS in caller
 xcfilter() {
-  grep -E --line-buffered -i 'error:|warning:|\*\* (BUILD|TEST) (SUCCEEDED|FAILED)|Test Suite|Test Case.*(passed|failed)|Executed [0-9]+ tests|fatal' \
+  grep -E --line-buffered 'error:|warning:|\*\* (BUILD|TEST) (SUCCEEDED|FAILED)|✘|recorded an issue|Expectation failed|Test run with|Test Suite .* (passed|failed)|Test Case .* (passed|failed)|Executed [0-9]+ tests|[Ff]atal' \
     | grep -v -E 'warning: .*(DerivedData|xcodegen)' || true
 }

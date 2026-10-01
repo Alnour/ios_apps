@@ -10,7 +10,12 @@ and `AVAudioApplication.requestRecordPermission()`.
   ```swift
   guard let locale = await SpeechTranscriber.supportedLocale(equivalentTo: .current) else { throw Unsupported() }
   let transcriber = SpeechTranscriber(locale: locale, preset: .transcription)
-  if let req = try await AssetInventory.assetInstallationRequest(supporting: [transcriber]) {
+  // REQUIRED: reserve the locale first, or asset requests fail with "<bundle id> is not subscribed to transcription.en"
+  if await !AssetInventory.reservedLocales.contains(where: { $0.identifier == locale.identifier }) {
+      _ = try await AssetInventory.reserve(locale: locale)
+  }
+  if await AssetInventory.status(forModules: [transcriber]) != .installed,
+     let req = try await AssetInventory.assetInstallationRequest(supporting: [transcriber]) {
       try await req.downloadAndInstall()          // first run only; show progress
   }
   let analyzer = SpeechAnalyzer(modules: [transcriber])

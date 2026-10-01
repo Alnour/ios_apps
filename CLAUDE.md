@@ -2,6 +2,8 @@
 
 One folder per iOS app, plus shared tooling and docs:
 
+- **One git repository, at `~/ios_apps`.** Apps are plain subfolders; never `git init` inside an app
+  folder (the scaffold script doesn't). Alnour commits himself.
 - `tools/` — reusable scripts. `new-ios-app.sh <Name> [bundlePrefix]` scaffolds an app from
   `tools/template/`; `build.sh`, `run.sh`, `test.sh`, `screenshot.sh` take `[Name] [sim]`
   (default sim "iPhone 17 Pro"). Each app's `Makefile` forwards to them (`make run`).

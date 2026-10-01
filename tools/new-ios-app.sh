@@ -31,5 +31,5 @@ SwiftUI iOS app, iOS 26+, Swift 6. The Xcode project is **generated** by xcodege
   (\`chub search apple\` lists them). Record gotchas with \`chub annotate apple/<id> "..."\`.
 MD
 
-(cd "$DEST" && xcodegen generate --quiet && git init -q && git add -A && git commit -qm "Scaffold $NAME" )
+(cd "$DEST" && xcodegen generate --quiet)   # no git init: apps live in the single ~/ios_apps repository
 log "done. next: tools/run.sh $NAME"
