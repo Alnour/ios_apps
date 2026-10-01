@@ -6,11 +6,13 @@ enum TranscriberError: LocalizedError {
     case unsupportedLocale
     case empty
     case notAuthorized
+    case simulator
     var errorDescription: String? {
         switch self {
         case .unsupportedLocale: "On-device transcription is not available for your language."
         case .empty: "No speech was detected in the recording."
         case .notAuthorized: "Speech recognition permission was not granted."
+        case .simulator: "The iOS Simulator can't transcribe speech. Run on an iPhone, or type the transcript below."
         }
     }
 }
@@ -54,7 +56,14 @@ enum Transcriber {
         } catch let error as NSError where error.domain == SFSpeechErrorDomain {
             // Assets couldn't be obtained (e.g. iOS Simulator can't download speech assets): use the classic recognizer.
             print("[transcriber] SpeechAnalyzer unavailable (\(error.localizedDescription)); falling back to SFSpeechRecognizer")
-            return try await transcribeWithLegacyRecognizer(fileAt: url)
+            do { return try await transcribeWithLegacyRecognizer(fileAt: url) }
+            catch {
+                #if targetEnvironment(simulator)
+                throw TranscriberError.simulator
+                #else
+                throw error
+                #endif
+            }
         }
     }
 

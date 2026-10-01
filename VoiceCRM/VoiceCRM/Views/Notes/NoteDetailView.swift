@@ -41,6 +41,9 @@ struct NoteDetailView: View {
                     Text(t).textSelection(.enabled)
                 } else {
                     Text("Not transcribed yet.").foregroundStyle(.secondary)
+                    if !note.stage.isBusy {
+                        Button("Type the transcript", systemImage: "keyboard") { transcriptDraft = ""; editingTranscript = true }
+                    }
                 }
             } header: {
                 HStack {
