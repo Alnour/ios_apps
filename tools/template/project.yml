@@ -33,6 +33,7 @@ targets:
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
+        UIRequiresFullScreen: true
         ITSAppUsesNonExemptEncryption: false
         # --- usage strings & URL schemes go here, e.g.
         # NSMicrophoneUsageDescription: "Records voice notes."

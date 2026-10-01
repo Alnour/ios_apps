@@ -33,6 +33,7 @@ targets:
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
+        UIRequiresFullScreen: true
         ITSAppUsesNonExemptEncryption: false
         NSMicrophoneUsageDescription: "VoiceCRM records voice notes about your customers and transcribes them on your device."
         NSSpeechRecognitionUsageDescription: "VoiceCRM transcribes your voice notes on your device."
